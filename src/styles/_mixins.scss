@@ -1,0 +1,92 @@
+/*
+Mixins are functions that can be used within classes to set up most common properties.
+1. You can include a mixin in a primary class while the sub classes would specify anything that the primary class does not such as width, height, margins, paddings etc. This requires more markup on HTML to make sure the button receives all formatting, similar to bootstrap.
+* For example:
+.btn-primary (would hold the mixin - while below would specify width and height)
+- .btn-small
+- .btn-large
+- .btn-full
+*/
+
+@mixin a-tag($text) {
+  color: $text;
+  @include rem(padding-bottom, 5px);
+  border-bottom: 1px solid transparent;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: $transition-hover;
+
+  &:hover,
+  &:focus {
+    color: $secondary-font-color;
+    border-bottom: 2px solid $secondary-font-color;
+  }
+}
+
+//buttons
+@mixin button($text, $bg) {
+  background: $bg;
+  border: 1px solid $text;
+  border-radius: $border-radius;
+  color: $text;
+  cursor: pointer;
+  font-weight: $bold;
+  letter-spacing: 1px;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: $transition-hover;
+
+  &:hover,
+  &:focus {
+    background: darken($secondary-font-color, 10%);
+  }
+}
+
+//media queries
+@mixin breakpoint($bp, $direction: min) {
+  @media screen and (#{$direction}-width: $bp)  {
+    @content;
+  }
+}
+
+//pixel to rem
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+  $px: ();
+  $rem: ();
+
+  @each $value in $values {
+
+    @if $value == 0 or $value == auto {
+      $px: append($px, $value);
+      $rem: append($rem, $value);
+
+    } @else {
+
+      $unit: unit($value);
+      $val: parseInt($value);
+
+      @if $unit == "px" {
+        $px: append($px, $value);
+        $rem: append($rem, ($val / 10 + rem));
+      }
+
+      @if $unit == "rem" {
+        $px: append($px, ($val * 10 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {
+    #{$property}: $px;
+
+  } @else {
+
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
+}

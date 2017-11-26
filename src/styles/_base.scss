@@ -1,0 +1,84 @@
+/*
+BASE
+All element tags go here as "BASE" (no classes, no ids)
+Examples:
+1. html
+2. body
+3. input
+4. a
+5. button
+6. form
+etc ..
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $site-bg;
+  color: $primary-font-color;
+  font-family: $font-family-sans-serif;
+  @include rem(font-size, $font-base);
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  @include a-tag($primary-font-color);
+}
+
+button {
+
+  &:disabled,
+  &[disabled]{
+    cursor: not-allowed !important;
+  }
+
+}
+
+form {
+
+  label {
+    font-size: $font-md;
+    @include rem(padding, 10px 0 0);
+
+    @include breakpoint($bp-320) {
+      @include rem(font-size, $font-lg);
+    }
+  }
+}
+
+h1 {
+  @include rem(font-size, $font-h1);
+  @include rem(letter-spacing, $letter-spacing);
+}
+
+h2 {
+  font-weight: $bold;
+}
+
+hr {
+  @include rem(width, 38px);
+}
+
+input {
+  background-color: transparent;
+  border-radius: $border-radius;
+  color: $primary-font-color;
+  cursor: pointer;
+  @include rem(font-size, $font-base);
+  @include rem(padding, 5px 8px);
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  @include rem(font-size, $font-p);
+}
+
+::placeholder {
+  color: transparent !important;
+}

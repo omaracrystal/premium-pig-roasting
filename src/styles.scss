@@ -1,5 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-section {
-  height: 500px;
-  background: yellow;
-}
+/* OUTSIDE VENDOR STYLE SHEETS */
+@import '~normalize.css/normalize.css';
+
+/* VARIABLES */
+@import 'styles/variables';
+
+/* MIXINS */
+@import 'styles/mixins';
+
+/* BASE */
+@import 'styles/base';
+
+/* HELPERS */
+@import 'styles/helpers';
+
+/* BASE COMPONENTS */
+@import 'styles/base-components';

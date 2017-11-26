@@ -1,0 +1,59 @@
+//___________________________________________________//
+//                                                  //
+//----------- ******* HELPERS ******* -------------//
+//________________________________________________//
+
+//IMAGES
+.cover-background-image {
+  //background: linear-gradient(rgba(0, 0, 0, 0), #000), url($home-bg-image);
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url($home-bg-image);
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  z-index: $z-index-bottom;
+}
+
+//DISPLAYS
+.hide {
+  display: none !important;
+}
+
+.hide-mobile {
+  display: none !important;
+
+  @include breakpoint($bp-768) {
+    display: flex !important;
+  }
+}
+
+.hide-tablet {
+  display: flex !important;
+
+  @include breakpoint($bp-768) {
+    display: none !important;
+  }
+}
+
+//LAYOUT
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-between {
+  justify-content: space-between;
+}

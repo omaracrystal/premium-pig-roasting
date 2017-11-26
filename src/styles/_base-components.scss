@@ -1,0 +1,75 @@
+//___________________________________________________//
+//                                                  //
+//--------- ******* BUTTON WORLD ******* ----------//
+//________________________________________________//
+
+.btn-primary {
+  @include button($primary-btn-font-color, $primary-btn-bg);
+  @include rem(font-size, $font-btn);
+  max-width: 100%;
+  @include rem(padding, 10px);
+  @include rem(min-width, 200px);
+}
+
+.section-title {
+  width: 100%;
+  text-align: center;
+  color: $secondary-font-color;
+  text-shadow: $text-shadow;
+}
+
+section {
+  height: 500px;
+  background: $site-bg;
+}
+
+//___________________________________________________//
+//                                                  //
+//--------- ******* PAGES WORLD ******* ----------//
+//________________________________________________//
+
+//header
+//main nav
+.main-nav {
+  list-style: none;
+  position: fixed;
+  box-shadow: $box-shadow;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  top: 0;
+  padding: 20px 0 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  li {
+    @include rem(font-size, $font-nav);
+  }
+}
+
+//home
+.home-title {
+  color: $primary-font-color;
+  text-align: center;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-shadow: $text-shadow;
+}
+
+//services
+
+//about aka meet the chef
+
+//how it works
+
+//contact
+
+//testimonials
+
+//footer
+footer {
+  background: $footer-bg;
+}

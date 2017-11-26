@@ -1,0 +1,82 @@
+//___________________________________________________//
+//                                                  //
+//---------- ******* VARIABLES ******* ------------//
+//________________________________________________//
+
+// - - - - - - - - - color world - - - - - - - - - //
+
+$off-white: #FBFBFF;
+$gray-light: #F0F0F0;
+$gray-dark: #525050;
+$bright-orange: #FF3F00;
+
+//colors fonts
+$primary-font-color: $off-white;
+$secondary-font-color: $bright-orange;
+
+//colors backgrounds
+$site-bg: $off-white;
+$section-bg: $gray-light;
+$footer-bg: $gray-dark;
+
+//colors buttons
+$primary-btn-bg: $bright-orange;
+$primary-btn-font-color: $off-white;
+
+//colors input
+$input-background: #3D3D3D;
+
+// - - - - - - - - - typography world - - - - - - - - - //
+
+//font type
+@import url('https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
+$font-family-sans-serif: 'Muli', Helvetica, Arial, sans-serif;
+
+//fonts sizes
+$font-sm: 12px;
+$font-base: 14px;
+$font-md: 16px;
+$font-lg: 18px;
+
+//font tags
+$font-h1: 20px;
+$font-p: $font-md;
+
+//font components
+$font-btn: 20px;
+$font-nav: $font-sm;
+
+//font weights
+$font-weight-normal: 500;
+$bold: 600;
+$bolder: 700;
+
+//font spacing
+$letter-spacing: 1.5px;
+
+//text shadow
+$text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+
+// - - - - - - - - - urls world - - - - - - - - - //
+
+$home-bg-image: "/../assets/images/northern-new-england.jpg";
+
+// - - - - - - - - - media query world - - - - - - - - - //
+
+$bp-320: 321px;
+$bp-480: 480px;
+$bp-768: 768px;
+$bp-1024: 1025px;
+
+// - - - - - - - - - z indices world - - - - - - - - - //
+
+$z-index-bottom: -1;
+$z-index-0: 0;
+$z-index-normal: 1;
+$z-index-1: 10;
+
+
+// - - - - - - - - - other world - - - - - - - - - //
+$border-radius: 5px;
+$transition-hover: all 0.3s ease;
+$box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
