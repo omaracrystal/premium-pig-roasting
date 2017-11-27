@@ -9,6 +9,7 @@ $off-white: #FBFBFF;
 $gray-light: #F0F0F0;
 $gray-dark: #525050;
 $bright-orange: #FF3F00;
+$gold: #F5A623;
 
 //colors fonts
 $primary-font-color: $black;
@@ -19,6 +20,7 @@ $third-font-color: $off-white;
 $site-bg: $off-white;
 $section-bg: $gray-light;
 $footer-bg: $gray-dark;
+$ribbon-bg: $gold;
 
 //colors buttons
 $primary-btn-bg: $bright-orange;
@@ -47,13 +49,16 @@ $font-p: $font-md;
 
 //font components
 $font-section-title: 40px;
+$font-card-title: 30px;
 $font-btn: $font-xlg;
-$font-nav: $font-sm;
+$font-nav: $font-lg;
 
 //font weights
+$font-weight-lighter: 300;
+$font-weight-light: 400;
 $font-weight-normal: 500;
-$bold: 600;
-$bolder: 700;
+$bold: 700;
+$bolder: 800;
 
 //font spacing
 $letter-spacing: 1.5px;
