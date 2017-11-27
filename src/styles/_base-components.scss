@@ -115,6 +115,16 @@
 }
 
 //home
+.home-section {
+  min-height: 100vh;
+  height: 100%;
+
+  .cover-background-image {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url($home-bg-image);
+  }
+}
+
 .home-title {
   color: $third-font-color;
   text-align: center;
