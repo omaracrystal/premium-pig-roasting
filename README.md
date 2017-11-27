@@ -15,9 +15,9 @@ I wanted to redesign my father's pig roasting website... current one at: http://
 
 **Sketch Mockup**
 :----------------------------------:
-![](/app/assets/images/pigroast-1.png)
-![](/app/assets/images/pigroast-2.png)
-![](/app/assets/images/pigroast-3.png)
-![](/app/assets/images/pigroast-4.png)
-![](/app/assets/images/pigroast-5.png)
-![](/app/assets/images/pigroast-6.png)
+![](/src/assets/images/pigroast-1.png)
+![](/src/assets/images/pigroast-2.png)
+![](/src/assets/images/pigroast-3.png)
+![](/src/assets/images/pigroast-4.png)
+![](/src/assets/images/pigroast-5.png)
+![](/src/assets/images/pigroast-6.png)
