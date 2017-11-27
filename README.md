@@ -1,7 +1,11 @@
 # Premium Pig Roasting and Catering Website
 
 ## Description:
-I wanted to redesign my father's pig roasting website... current one at: http://partytimepigroasting.com/
+I wanted to redesign my father's pig roasting website... 
+
+older website: http://partytimepigroasting.com/
+
+newer website (in the works): https://premium-pig-roasting.herokuapp.com/ 
 
 ## Technologies:
 - Angular 5
@@ -11,6 +15,7 @@ I wanted to redesign my father's pig roasting website... current one at: http://
 - Node 
 - Express
 - Sketch
+- Heroku
 - Gulp & Browserify
 
 **Sketch Mockup**
