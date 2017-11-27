@@ -1,5 +1,5 @@
 <div class="website-container" id="home">
-  <app-header></app-header>
+  <app-header class="width-full"></app-header>
 
   <app-home></app-home>
 
@@ -9,9 +9,10 @@
 
   <app-how id="how"></app-how>
 
-  <app-contact id="contact"></app-contact>
-
-  <app-testimonials id="testimonials"></app-testimonials>
+  <div class="website-section-wrapper no-background row">
+  <app-contact id="contact" class="col-half"></app-contact>
+  <app-testimonials id="testimonials" class="col-half"></app-testimonials>
+  </div>
 
   <app-footer></app-footer>
 </div>

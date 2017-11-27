@@ -32,6 +32,10 @@
   }
 }
 
+.no-background {
+  background: none !important;
+}
+
 //LAYOUT
 .column {
   display: flex;
@@ -54,6 +58,21 @@
 
 .space-between {
   justify-content: space-between;
+}
+
+.center-contents {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.col-half {
+  width: 50%;
+}
+
+.width-full {
+  width: 100%;
 }
 
 //text

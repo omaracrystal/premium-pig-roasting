@@ -19,6 +19,11 @@
   @include rem(margin, 50px auto 30px);
 }
 
+.website-section-wrapper {
+  background: $site-bg;
+  width: 100%;
+}
+
 .website-section {
   width: 100%;
   max-width: 1100px;
@@ -90,25 +95,35 @@
   }
 }
 
-  //___________________________________________________//
+.no-background {
+  .section-title {
+    color: $third-font-color;
+  }
+}
+
+//___________________________________________________//
 //                                                  //
 //--------- ******* PAGES WORLD ******* ----------//
 //________________________________________________//
 
 //header
 //main nav
-.main-nav {
-  list-style: none;
-  position: fixed;
+app-header {
   box-shadow: $box-shadow;
-  background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
   top: 0;
-  padding: 20px 0 7px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   z-index: $z-index-1;
+}
+.main-nav {
+  position: relative;
+  background: none;
+  list-style: none;
+  padding: 20px 0 7px;
+  max-width: 1100px;
+  margin: auto;
+  width: 100%;
 
   .nav-item {
     @include rem(font-size, $font-nav);
@@ -117,16 +132,6 @@
 
 //home
 .home-section {
-  min-height: 100vh;
-  height: 100%;
-
-  .cover-background-image {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url($home-bg-image);
-  }
-}
-
-.home-title {
   color: $third-font-color;
   text-align: center;
   min-height: 500px;
@@ -135,6 +140,20 @@
   flex-direction: column;
   justify-content: center;
   text-shadow: $text-shadow;
+
+  .home-title {
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+  }
+
+  .cover-background-image {
+    min-height: 100vh;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url($home-bg-image);
+    position: fixed;
+    width: 100%;
+  }
 }
 
 //services
@@ -153,6 +172,11 @@
 }
 
 //about aka meet the chef
+.about-section {
+  .section-title {
+    color: $third-font-color;
+  }
+}
 
 //how it works
 
@@ -162,5 +186,12 @@
 
 //footer
 footer {
+  color: $footer-font-color;
   background: $footer-bg;
+  min-height: 150px;
+
+  .footer-wrapper {
+    max-width: 1100px;
+    margin: auto;
+  }
 }
