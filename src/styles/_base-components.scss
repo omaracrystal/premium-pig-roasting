@@ -4,7 +4,7 @@
 //________________________________________________//
 
 .btn-primary {
-  @include button($primary-btn-font-color, $primary-btn-bg);
+  @include button($third-font-color, $primary-btn-bg);
   @include rem(font-size, $font-btn);
   max-width: 100%;
   @include rem(padding, 10px);
@@ -18,8 +18,10 @@
   text-shadow: $text-shadow;
 }
 
-section {
-  height: 500px;
+.website-section {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
   background: $site-bg;
 }
 
@@ -42,14 +44,14 @@ section {
   flex-direction: row;
   justify-content: space-around;
 
-  li {
+  .nav-item {
     @include rem(font-size, $font-nav);
   }
 }
 
 //home
 .home-title {
-  color: $primary-font-color;
+  color: $third-font-color;
   text-align: center;
   min-height: 500px;
   display: flex;
@@ -60,6 +62,10 @@ section {
 }
 
 //services
+.service-section {
+  .service-intro-container {
+  }
+}
 
 //about aka meet the chef
 

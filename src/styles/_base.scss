@@ -27,7 +27,7 @@ body {
 }
 
 a {
-  @include a-tag($primary-font-color);
+  @include a-tag($third-font-color);
 }
 
 button {
