@@ -1,6 +1,6 @@
 {
   "name": "premium-pig-roasting",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -14,7 +14,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
-    "@angular/cli": "1.5.4",
+    "@angular/cli": "^1.6.8",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
     "@angular/compiler-cli": "^5.0.0",
@@ -28,7 +28,7 @@
     "express": "^4.16.2",
     "normalize.css": "^7.0.0",
     "rxjs": "^5.5.2",
-    "typescript": "~2.4.2",
+    "typescript": "^2.4.2",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
@@ -50,7 +50,7 @@
     "tslint": "~5.7.0"
   },
   "engines": {
-    "node": "6.10.3",
+    "node": "8.9.4",
     "npm": "3.10.10"
   }
 }

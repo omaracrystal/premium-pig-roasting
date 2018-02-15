@@ -15,6 +15,10 @@ etc ..
   padding: 0;
 }
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
   background: $site-bg;
   color: $primary-font-color;
