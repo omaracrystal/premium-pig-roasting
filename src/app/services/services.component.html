@@ -22,101 +22,33 @@
 
     <div class="card-container">
 
-      <article class="card-wrapper service-card column">
-        <h2 class="card-title">
-          Pick Me Up
+      <article *ngFor="let service of services"
+               class="card-wrapper service-card column">
+        <h2 class="card-title"
+            [innerHTML]="service.title">
         </h2>
-
         <div class="ribbon-wrapper">
           <div class="ribbon column">
           <span class="ribbon-text">
             Starting at
           </span>
-            <span class="ribbon-price">
-            $10 per lb
+            <span class="ribbon-price"
+            [innerHTML]="service.price">
           </span>
           </div>
           <div class="ribbon-fold"></div>
         </div>
-
         <div class="card-item">
-          <img class="card-image" src="" alt="Pigroast Pick Me Up">
+          <img class="card-image"
+               [attr.src]="service.img"
+               width="1" height="1"
+               alt="Pigroast Pick Me Up">
           <div class="card-text-wrapper">
-          <span class="card-subtitle">
-            We prep it. <strong>We cook it.</strong> <span class="highlight">You pick it up.</span>
-            <br>
-            It is ready jto be carved and served!
-          </span>
+            <span class="card-subtitle"
+                  [innerHTML]="service.subtitle"></span>
             <hr class="card-hr">
-            <span class="card-description">
-            It's the <span class="highlight">"Easy Carve"</span> which means that the meat of the pig is <strong>pre-boned</strong> making it a breeze to carve & serve yourself!
-          </span>
-          </div>
-        </div>
-      </article>
-
-      <article class="card-wrapper service-card column">
-        <h2 class="card-title">
-          Bring it On
-        </h2>
-
-        <div class="ribbon-wrapper">
-          <div class="ribbon column">
-          <span class="ribbon-text">
-            Starting at
-          </span>
-            <span class="ribbon-price">
-            $10/lb <span class="plus">+</span> Mileage
-          </span>
-          </div>
-          <div class="ribbon-fold"></div>
-        </div>
-
-        <div class="card-item">
-          <img class="card-image" src="" alt="Pigroast Bring It On">
-          <div class="card-text-wrapper">
-          <span class="card-subtitle">
-            We prep it. <strong>We cook it.</strong> <span class="highlight">We Deliver it.</span>
-            <br>
-            We serve it buffet style!
-          </span>
-            <hr class="card-hr">
-            <span class="card-description">
-            The pig is <strong>pre-boned</strong> and <strong>pre-stuffed</strong> with a <span class="highlight">homemade sausage recipe stuffing</span>, one of Bill's secret recipes that the critics are raving about.
-          </span>
-          </div>
-        </div>
-      </article>
-
-      <article class="card-wrapper service-card column">
-        <h2 class="card-title">
-          The Whole 9 Yards
-        </h2>
-
-        <div class="ribbon-wrapper">
-          <div class="ribbon column">
-          <span class="ribbon-text">
-            Starting at
-          </span>
-            <span class="ribbon-price">
-            $10/lb <span class="plus">+</span> Service
-          </span>
-          </div>
-          <div class="ribbon-fold"></div>
-        </div>
-
-        <div class="card-item">
-          <img class="card-image" src="" alt="Pigroast The Whole 9 Yards">
-          <div class="card-text-wrapper">
-          <span class="card-subtitle">
-            We prep it. <strong>We cook it on site.</strong> <span
-            class="highlight">We serve you from start to finish!</span>
-          </span>
-            <hr class="card-hr">
-            <span class="card-description">
-            The typical roast time is about six hours. This <strong>popular</strong> option allows for your guests to <span
-              class="highlight">enjoy the entire pig roasting experience</span> which adds to the festive occasion.
-          </span>
+            <span class="card-description"
+                  [innerHTML]="service.description"></span>
           </div>
         </div>
       </article>
