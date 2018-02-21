@@ -179,6 +179,7 @@ app-header {
     right: 10px;
 
     .call {
+      color: $third-font-color;
       @include rem(font-size, 16px);
     }
 
