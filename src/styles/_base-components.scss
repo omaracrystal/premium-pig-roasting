@@ -12,7 +12,6 @@
 
   @include breakpoint($bp-480) {
     @include rem(max-width, 215px);
-    margin: auto;
   }
 }
 
@@ -137,6 +136,7 @@ app-header {
   top: 0;
   z-index: $z-index-1;
 }
+
 .main-nav {
   display: flex;
   flex-direction: column;
@@ -158,42 +158,119 @@ app-header {
     flex-direction: row;
   }
 }
+
 .top-main-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   max-width: none;
 
   .nav-logo {
     text-align: left;
 
     .logo {
-      position: absolute;
-      width: 250px;
-      top: 10px;
-      left: 10px;
+      display: none;
+
+      @include breakpoint($bp-768) {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 250px;
+      }
+    }
+
+    .logo-mobile {
+      display: block;
+      height: 60px;
+      margin: auto;
+
+      @include breakpoint($bp-768) {
+        display: none;
+      }
     }
   }
 
   .nav-call {
     text-align: right;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    left: 30px;
 
     .call {
       color: $third-font-color;
       @include rem(font-size, 16px);
+      margin-top: 30px;
+
+      @include breakpoint($bp-768) {
+        margin-top: 0;
+      }
     }
 
     .highlight {
       @include rem(font-size, 22px);
       margin-top: -10px;
     }
+
+    @include breakpoint($bp-768) {
+      display: block;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  .menu-mobile {
+    position: absolute;
+    right: 30px;
+
+    @include breakpoint($bp-768) {
+      display: none;
+    }
   }
 }
+
 .bottom-main-nav {
+  display: none;
   @include rem(margin-top, 20px);
+
+  @include breakpoint($bp-768) {
+    display: flex;
+  }
 }
 
-//home
+// hamburger menu
+.menu-btn {
+  display: block;
+  width: 36px;
+  z-index: $z-index-1;
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    background-color: #fff;
+    content: '';
+    display: block;
+    height: 4px;
+    transition: all 200ms ease-in-out;
+  }
+  &:before {
+    box-shadow: 0 10px 0 #fff;
+    margin-bottom: 16px;
+  }
+
+  &.open,
+  &:hover:before {
+    box-shadow: 0 0 0 #fff;
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  &.close,
+  &:hover:after {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+}
+
+// home
 .home-section {
   color: $third-font-color;
   text-align: center;
@@ -378,12 +455,21 @@ app-header {
 }
 
 //how it works
+.how-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .btn-primary {
+    margin: 0 auto;
+  }
+}
+
 .how-step-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: space-around;
-  margin-top: 10%;
 
   .how-step-wrapper {
     display: flex;
