@@ -187,12 +187,11 @@ app-header {
 
   .service-intro-image {
     width: 100%;
-    height: 200px;
+    max-width: 281px;
+    height: 100%;
+    max-height: 220px;
+    margin: auto;
     background: $gray-light;
-
-    @include breakpoint($bp-1024) {
-      width: 30%;
-    }
   }
 
   .service-intro {
@@ -215,11 +214,7 @@ app-header {
   .card-image {
     min-height: 50%;
     min-width: 100%;
-    max-width: $service-card-width;
-
-    @include breakpoint($bp-768) {
-      width: $service-card-width;
-    }
+    max-width: 100%;
   }
 
   .card-item {
@@ -233,6 +228,32 @@ app-header {
 }
 
 //about aka meet the chef
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  article {
+    width: 100%;
+
+    &:first-child {
+      @include breakpoint($bp-1024) {
+        width: 45%;
+      }
+    }
+
+    &:last-child {
+      @include breakpoint($bp-1024) {
+        width: 55%;
+      }
+    }
+  }
+
+  @include breakpoint($bp-1024) {
+    flex-direction: row;
+  }
+}
+
 .about-section {
   .section-title {
     color: $third-font-color;
@@ -242,24 +263,39 @@ app-header {
 .about-card {
   max-width: $about-card-width + $ribbon-width;
 
-  .card-image {
-    min-height: 100%;
-    min-width: 100%;
-    max-width: $about-card-width;
+  .ribbon {
+    max-width: 65%;
 
-    @include breakpoint($bp-768) {
-      width: $about-card-width;
+    .ribbon-text {
+      @include rem(font-size, $font-md);
     }
   }
 
   .card-item {
     max-width: $about-card-width;
-    height: $about-card-height;
+    background-image: url($about-img);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 400px;
+
+    @include breakpoint($bp-1024) {
+      height: 500px;
+    }
   }
 
   @include breakpoint($bp-768) {
     width: $about-card-width + $ribbon-width;
   }
+}
+
+.about-description {
+  background: $site-bg;
+  @include rem(padding, 20px);
+  @include rem(margin, 10px);
+  @include rem(font-size, 13px);
+  line-height: 1.7;
 }
 
 //how it works

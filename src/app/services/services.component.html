@@ -6,53 +6,46 @@
     </h1>
 
     <div class="service-intro-container">
-      <img class="service-intro-image" src="" alt="Pig Roast stuffing"/>
-      <article class="service-intro">
-        We use <span class="highlight">USDA pigs</span> obtained from wholesale suppliers, ranging in size from about 60
-        pounds to 120 pounds. The general rule is one pound of pork per person, and so, for example, if you have 100
-        guests, you order a 100-pound pig for your event.
-        <br><br>
-        We tailor your pig roasting service around your event’s needs and specification giving you and your guests the
-        best pig roasting catering experience. Whether you are having a wedding reception, birthday party, business
-        gathering or any large celebration, a pig roast is easy and fun for any occasion!
-        <br><br>
-        <strong>Simply choose one of the following three options:</strong>
-      </article>
+      <img class="service-intro-image"
+           [attr.src]="introImg"
+           alt="Pig Roast stuffing"/>
+      <article class="service-intro"
+               [innerHTML]="introduction"></article>
     </div>
 
     <div class="card-container">
-
-      <article *ngFor="let service of services"
-               class="card-wrapper service-card column">
-        <h2 class="card-title"
-            [innerHTML]="service.title">
-        </h2>
-        <div class="ribbon-wrapper">
-          <div class="ribbon column">
-          <span class="ribbon-text">
-            Starting at
-          </span>
-            <span class="ribbon-price"
-            [innerHTML]="service.price">
-          </span>
+      <ng-container *ngFor="let service of services">
+        <article id="service-{{service.id}}"
+                 class="card-wrapper service-card column">
+          <h2 class="card-title"
+              [innerHTML]="service.title">
+          </h2>
+          <div class="ribbon-wrapper">
+            <div class="ribbon column">
+            <span class="ribbon-text">
+              Starting at
+            </span>
+              <span class="ribbon-price"
+              [innerHTML]="service.price">
+            </span>
+            </div>
+            <div class="ribbon-fold"></div>
           </div>
-          <div class="ribbon-fold"></div>
-        </div>
-        <div class="card-item">
-          <img class="card-image"
-               [attr.src]="service.img"
-               width="1" height="1"
-               alt="Pigroast Pick Me Up">
-          <div class="card-text-wrapper">
-            <span class="card-subtitle"
-                  [innerHTML]="service.subtitle"></span>
-            <hr class="card-hr">
-            <span class="card-description"
-                  [innerHTML]="service.description"></span>
+          <div class="card-item">
+            <img class="card-image"
+                 [attr.src]="service.img"
+                 width="1" height="1"
+                 alt="Pigroast Pick Me Up">
+            <div class="card-text-wrapper">
+              <span class="card-subtitle"
+                    [innerHTML]="service.subtitle"></span>
+              <hr class="card-hr">
+              <span class="card-description"
+                    [innerHTML]="service.description"></span>
+            </div>
           </div>
-        </div>
-      </article>
-
+        </article>
+      </ng-container>
     </div>
   </section>
 </div>
