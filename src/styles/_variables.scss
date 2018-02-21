@@ -16,6 +16,8 @@ $gold: #F5A623;
 $primary-font-color: $black;
 $secondary-font-color: $bright-orange;
 $third-font-color: $off-white;
+$logo-color: #EA212D;
+//$secondary-font-color: $logo-color;
 
 //colors backgrounds
 $site-bg: $off-white;
@@ -35,6 +37,8 @@ $input-background: #3D3D3D;
 
 //font type
 @import url('https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
+// need more font thickness 'Quicksand'
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 $font-family-sans-serif: 'Muli', Helvetica, Arial, sans-serif;
 
 //fonts sizes

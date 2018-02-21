@@ -7,8 +7,13 @@
   @include button($third-font-color, $primary-btn-bg);
   @include rem(font-size, $font-btn);
   max-width: 100%;
-  @include rem(padding, 10px);
+  @include rem(padding, 15px);
   @include rem(min-width, 200px);
+
+  @include breakpoint($bp-480) {
+    @include rem(max-width, 215px);
+    margin: auto;
+  }
 }
 
 .section-title {
@@ -16,10 +21,7 @@
   text-align: center;
   color: $secondary-font-color;
   text-shadow: $text-shadow;
-
-  @include breakpoint($bp-1024) {
-    @include rem(margin, 50px auto 30px);
-  }
+  @include rem(margin, 100px auto 30px);
 }
 
 .website-section-wrapper {
@@ -155,6 +157,39 @@ app-header {
   @include breakpoint($bp-768) {
     flex-direction: row;
   }
+}
+.top-main-nav {
+  max-width: none;
+
+  .nav-logo {
+    text-align: left;
+
+    .logo {
+      position: absolute;
+      width: 250px;
+      top: 10px;
+      left: 10px;
+    }
+  }
+
+  .nav-call {
+    text-align: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    .call {
+      @include rem(font-size, 16px);
+    }
+
+    .highlight {
+      @include rem(font-size, 22px);
+      margin-top: -10px;
+    }
+  }
+}
+.bottom-main-nav {
+  @include rem(margin-top, 20px);
 }
 
 //home
@@ -299,6 +334,45 @@ app-header {
 }
 
 //how it works
+.how-step-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 10%;
+
+  .how-step-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    @include rem(font-size, 22px);
+    @include rem(margin-bottom, 50px);
+    width: 100%;
+
+    .fa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include rem(font-size, 80px);
+      color: #4A4A4A;
+      background: #D8D8D8;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 1px solid #979797;
+      @include rem(margin-bottom, 20px);
+    }
+
+    @include breakpoint($bp-768) {
+      width: 33%;
+    }
+  }
+
+  @include breakpoint($bp-768) {
+    flex-direction: row;
+  }
+}
 
 //contact
 
