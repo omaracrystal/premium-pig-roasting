@@ -10,15 +10,17 @@ Mixins are functions that can be used within classes to set up most common prope
 
 @mixin a-tag($text) {
   color: $text;
-  @include rem(padding-bottom, 5px);
+  @include rem(padding-bottom, 8px);
   border-bottom: 1px solid transparent;
   cursor: pointer !important;
   text-decoration: none !important;
   transition: $transition-hover;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     color: $secondary-font-color;
+    font-weight: $bold;
     border-bottom: 2px solid $secondary-font-color;
   }
 }

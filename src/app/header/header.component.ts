@@ -8,6 +8,7 @@ const LOGO_MOBILE = '/../../assets/images/mobile-logo.svg';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent implements OnInit {
   logo = LOGO;
   mobileLogo = LOGO_MOBILE;
@@ -17,4 +18,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  goToRoute(id) {
+    document.getElementById(id).scrollIntoView();
+  }
 }

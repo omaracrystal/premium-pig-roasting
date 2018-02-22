@@ -166,6 +166,14 @@ app-header {
   align-items: center;
   max-width: none;
 
+  a {
+    &:hover,
+    &:focus {
+      border-bottom: none;
+      text-decoration: none;
+    }
+  }
+
   .nav-logo {
     text-align: left;
 
@@ -232,6 +240,18 @@ app-header {
 .bottom-main-nav {
   display: none;
   @include rem(margin-top, 20px);
+  width: 100%;
+
+  .nav-item {
+    @include breakpoint($bp-768) {
+      width: 20%; // x5 menu items = 100%
+      text-align: center;
+    }
+  }
+
+  a {
+    @include a-tag($third-font-color);
+  }
 
   @include breakpoint($bp-768) {
     display: flex;

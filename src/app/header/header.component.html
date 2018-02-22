@@ -21,11 +21,50 @@
       <a href="#" class="menu-btn"></a>
     </li>
   </ul>
+
   <ul class="main-nav bottom-main-nav">
-    <li class="nav-item"><a href="#services" >Services</a></li>
-    <li class="nav-item"><a href="#about" >Meet the Chef</a></li>
-    <li class="nav-item"><a href="#how" >How it Works</a></li>
-    <li class="nav-item"><a href="#contact">Contact</a></li>
-    <li class="nav-item"><a href="#testimonials">Testimonials</a></li>
+    <li class="nav-item">
+      <a [routerLink]='link'
+         routerLinkActive="router-link-active"
+         (click)="goToRoute('services')">Services</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]='link'
+         routerLinkActive="router-link-active"
+         (click)="goToRoute('about')">Meet the Chef</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]='link'
+         routerLinkActive="router-link-active"
+         (click)="goToRoute('how')">How it Works</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]='link'
+         routerLinkActive="router-link-active"
+         (click)="goToRoute('contact')">Contact</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]='link'
+         routerLinkActive="router-link-active"
+         (click)="goToRoute('testimonials')">Testimonials</a>
+    </li>
   </ul>
+
+  <!--<ul id="bottom-main-nav" class="main-nav bottom-main-nav">-->
+    <!--<li class="nav-item">-->
+      <!--<a href="#services" (click)="toggleActive()">Services</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item">-->
+      <!--<a href="#about" (click)="toggleActive()">Meet the Chef</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item active">-->
+      <!--<a href="#how" (click)="toggleActive()">How it Works</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item">-->
+      <!--<a href="#contact" (click)="toggleActive()">Contact</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item">-->
+      <!--<a href="#testimonials" (click)="toggleActive()">Testimonials</a>-->
+    <!--</li>-->
+  <!--</ul>-->
 </div>

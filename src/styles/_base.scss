@@ -31,7 +31,7 @@ body {
 }
 
 a {
-  @include a-tag($third-font-color);
+  text-decoration: none;
 }
 
 button {
