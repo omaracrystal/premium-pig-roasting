@@ -12,6 +12,7 @@ const LOGO_MOBILE = '/../../assets/images/mobile-logo.svg';
 export class HeaderComponent implements OnInit {
   logo = LOGO;
   mobileLogo = LOGO_MOBILE;
+  bottomNav: boolean = true;
 
   constructor() { }
 
@@ -20,5 +21,9 @@ export class HeaderComponent implements OnInit {
 
   goToRoute(id) {
     document.getElementById(id).scrollIntoView();
+  }
+
+  toggleActive() {
+
   }
 }

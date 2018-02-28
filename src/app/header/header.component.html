@@ -17,12 +17,15 @@
       </a>
       <br>
     </li>
-    <li class="nav-item menu-mobile">
-      <a href="#" class="menu-btn"></a>
+    <li [ngClass]="{'close': bottomNav}" class="nav-item menu-mobile">
+      <a href="#" class="menu-btn"
+         (click)="bottomNav = !bottomNav"></a>
     </li>
   </ul>
 
-  <ul class="main-nav bottom-main-nav">
+
+  <ul [ngClass]="{'bottom-main-nav-mobile': bottomNav}"
+      class="main-nav bottom-main-nav">
     <li class="nav-item">
       <a [routerLink]='link'
          routerLinkActive="router-link-active"
@@ -49,22 +52,4 @@
          (click)="goToRoute('testimonials')">Testimonials</a>
     </li>
   </ul>
-
-  <!--<ul id="bottom-main-nav" class="main-nav bottom-main-nav">-->
-    <!--<li class="nav-item">-->
-      <!--<a href="#services" (click)="toggleActive()">Services</a>-->
-    <!--</li>-->
-    <!--<li class="nav-item">-->
-      <!--<a href="#about" (click)="toggleActive()">Meet the Chef</a>-->
-    <!--</li>-->
-    <!--<li class="nav-item active">-->
-      <!--<a href="#how" (click)="toggleActive()">How it Works</a>-->
-    <!--</li>-->
-    <!--<li class="nav-item">-->
-      <!--<a href="#contact" (click)="toggleActive()">Contact</a>-->
-    <!--</li>-->
-    <!--<li class="nav-item">-->
-      <!--<a href="#testimonials" (click)="toggleActive()">Testimonials</a>-->
-    <!--</li>-->
-  <!--</ul>-->
 </div>

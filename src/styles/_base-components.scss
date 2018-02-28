@@ -131,7 +131,7 @@
 app-header {
   box-shadow: $box-shadow;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: $app-header-background;
   position: fixed;
   top: 0;
   z-index: $z-index-1;
@@ -162,7 +162,7 @@ app-header {
 .top-main-nav {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   max-width: none;
 
@@ -176,6 +176,7 @@ app-header {
 
   .nav-logo {
     text-align: left;
+    margin-left: 25px;
 
     .logo {
       display: none;
@@ -201,44 +202,38 @@ app-header {
   }
 
   .nav-call {
+    display: none;
     text-align: right;
-    position: absolute;
-    left: 30px;
 
     .call {
-      color: $third-font-color;
-      @include rem(font-size, 16px);
-      margin-top: 30px;
 
       @include breakpoint($bp-768) {
+        color: $third-font-color;
         margin-top: 0;
+        @include rem(font-size, 12px);
       }
     }
 
     .highlight {
-      @include rem(font-size, 22px);
+      @include rem(font-size, 16px);
       margin-top: -10px;
+
+      @include breakpoint($bp-768) {
+        @include rem(font-size, 22px);
+
+      }
     }
 
     @include breakpoint($bp-768) {
       display: block;
+      position: absolute;
       top: 10px;
       right: 10px;
-    }
-  }
-
-  .menu-mobile {
-    position: absolute;
-    right: 30px;
-
-    @include breakpoint($bp-768) {
-      display: none;
     }
   }
 }
 
 .bottom-main-nav {
-  display: none;
   @include rem(margin-top, 20px);
   width: 100%;
 
@@ -252,6 +247,10 @@ app-header {
   a {
     @include a-tag($third-font-color);
   }
+}
+
+.bottom-main-nav-mobile {
+  display: none;
 
   @include breakpoint($bp-768) {
     display: flex;
@@ -259,34 +258,59 @@ app-header {
 }
 
 // hamburger menu
-.menu-btn {
-  display: block;
-  width: 36px;
-  z-index: $z-index-1;
-  cursor: pointer;
+.menu-mobile {
+  position: absolute;
+  right: 30px;
 
-  &:before,
-  &:after {
-    background-color: #fff;
-    content: '';
+  @include breakpoint($bp-768) {
+    display: none;
+  }
+
+  .menu-btn {
     display: block;
-    height: 4px;
-    transition: all 200ms ease-in-out;
-  }
-  &:before {
-    box-shadow: 0 10px 0 #fff;
-    margin-bottom: 16px;
+    width: 36px;
+    z-index: $z-index-1;
+    cursor: pointer;
+
+    &:hover{
+      &:before {
+        box-shadow: 0 0 0 #fff;
+        transform: translateY(10px) rotate(45deg);
+      }
+
+      &:after {
+        transform: translateY(-10px) rotate(-45deg);
+      }
+    }
   }
 
-  &.open,
-  &:hover:before {
-    box-shadow: 0 0 0 #fff;
-    transform: translateY(10px) rotate(45deg);
+  .menu-btn,
+  &.close .menu-btn:hover {
+
+    &:before,
+    &:after {
+      background-color: #fff;
+      content: '';
+      display: block;
+      height: 4px;
+      transition: all 200ms ease-in-out;
+    }
+
+    &:before {
+      box-shadow: 0 10px 0 #fff;
+      margin-bottom: 16px;
+    }
   }
 
-  &.close,
-  &:hover:after {
-    transform: translateY(-10px) rotate(-45deg);
+  &.close .menu-btn:hover {
+
+    &:before {
+      transform: translateY(0px) rotate(0);
+    }
+
+    &:after {
+      transform: translateY(0px) rotate(0);
+    }
   }
 }
 
@@ -330,6 +354,7 @@ app-header {
 
     @include breakpoint($bp-768) {
       padding: 50px;
+      margin-top: 100px;
     }
   }
 
