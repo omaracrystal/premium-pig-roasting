@@ -18,7 +18,8 @@ Mixins are functions that can be used within classes to set up most common prope
 
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &.activeMenuItem {
     color: $secondary-font-color;
     font-weight: $bold;
     border-bottom: 2px solid $secondary-font-color;

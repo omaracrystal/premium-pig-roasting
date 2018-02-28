@@ -27,28 +27,28 @@
   <ul [ngClass]="{'bottom-main-nav-mobile': bottomNav}"
       class="main-nav bottom-main-nav">
     <li class="nav-item">
-      <a [routerLink]='link'
-         routerLinkActive="router-link-active"
+      <a routerLinkActive="router-link-active"
+         [ngClass]="{'activeMenuItem': activeMenuItemServices}"
          (click)="goToRoute('services')">Services</a>
     </li>
     <li class="nav-item">
-      <a [routerLink]='link'
-         routerLinkActive="router-link-active"
+      <a routerLinkActive="router-link-active"
+         [ngClass]="{'activeMenuItem': activeMenuItemAbout}"
          (click)="goToRoute('about')">Meet the Chef</a>
     </li>
     <li class="nav-item">
-      <a [routerLink]='link'
-         routerLinkActive="router-link-active"
+      <a routerLinkActive="router-link-active"
+         [ngClass]="{'activeMenuItem': activeMenuItemHow}"
          (click)="goToRoute('how')">How it Works</a>
     </li>
     <li class="nav-item">
-      <a [routerLink]='link'
-         routerLinkActive="router-link-active"
+      <a routerLinkActive="router-link-active"
+         [ngClass]="{'activeMenuItem': activeMenuItemContact}"
          (click)="goToRoute('contact')">Contact</a>
     </li>
     <li class="nav-item">
-      <a [routerLink]='link'
-         routerLinkActive="router-link-active"
+      <a routerLinkActive="router-link-active"
+         [ngClass]="{'activeMenuItem': activeMenuItemTestimonials}"
          (click)="goToRoute('testimonials')">Testimonials</a>
     </li>
   </ul>
