@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 
 const LOGO = '/../../assets/images/logo.svg';
 const LOGO_MOBILE = '/../../assets/images/mobile-logo.svg';
@@ -13,6 +14,7 @@ export class HeaderComponent implements OnInit {
   logo = LOGO;
   mobileLogo = LOGO_MOBILE;
   bottomNav: boolean = true;
+  isScrolled: boolean = false;
   // active menu items
   activeMenuItemServices: boolean = false;
   activeMenuItemAbout: boolean = false;
@@ -20,7 +22,9 @@ export class HeaderComponent implements OnInit {
   activeMenuItemContact: boolean = false;
   activeMenuItemTestimonials: boolean = false;
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) private document: Document) { }
+
+  @HostListener('window:scroll', [])
 
   ngOnInit() {
     if (location.hash === '#services') {
@@ -39,6 +43,22 @@ export class HeaderComponent implements OnInit {
       this.activeMenuItemTestimonials = true;
     }
   }
+
+  onWindowScroll() {
+    const scrollTopHeight = document.body.scrollTop || 0;
+    console.log('scroll ding dong');
+
+    if(scrollTopHeight > 200) {
+      this.isScrolled = true;
+    } else {
+      this.isScrolled = false;
+    }
+  }
+
+  scrollToTop() {
+    this.document.body.scrollTop = 0;
+  }
+
 
   goToRoute(id) {
     document.getElementById(id).scrollIntoView();
