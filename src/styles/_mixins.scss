@@ -22,9 +22,9 @@ Mixins are functions that can be used within classes to set up most common prope
   &:focus,
   &:active,
   &.activeMenuItem {
-    color: $secondary-font-color;
+    color: $white;
     font-weight: $bolder;
-    border-bottom: 3.5px solid $secondary-font-color;
+    //border-bottom: 3.5px solid $black;
   }
 }
 

@@ -24,7 +24,8 @@
 
 .website-section-wrapper {
   background: $site-bg;
-  width: 100%;
+  //width: 100%;
+  margin: 40px;
 }
 
 .website-section {
@@ -127,6 +128,7 @@
 //header
 //main nav
 app-header {
+  background: $app-header-background;
   position: fixed;
   top: 0;
   width: 100%;
@@ -134,7 +136,6 @@ app-header {
 
   @include breakpoint($bp-768) {
     box-shadow: $box-shadow;
-    background-color: $white;
   }
 
   app-logo {
@@ -383,6 +384,24 @@ app-call-block {
     position: relative;
     min-height: 100vh;
     height: 100%;
+
+    .place {
+      font-weight: 500;
+      letter-spacing: -1px;
+      @include rem(font-size, 30px);
+    }
+
+    .sub-title {
+      font-weight: 300;
+      letter-spacing: 0;
+      @include rem(font-size, 40px);
+    }
+
+    .title {
+      font-weight: $bolder;
+      letter-spacing: 5px;
+      @include rem(font-size, 50px);
+    }
   }
 
   .logo-pig {
