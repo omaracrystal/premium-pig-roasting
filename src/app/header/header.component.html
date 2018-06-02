@@ -1,55 +1,41 @@
 <div class="main-header">
-  <ul class="main-nav top-main-nav">
-    <li class="nav-item nav-logo">
-      <a href="#home">
-        <img class="logo-mobile"
-             [attr.src]="mobileLogo"
-             alt="Premium Pig Roasting and Catering"/>
-        <img class="logo"
-             [attr.src]="logo"
-             alt="Premium Pig Roasting and Catering"/>
-      </a>
-    </li>
-    <li class="nav-item nav-call">
+  <div class="main-nav">
+    <div class="call-block">
       <a href="#home" class="column">
         <span class="call">Call for a Free Quote</span>
         <strong class="highlight">603-393-5234</strong>
       </a>
       <br>
-    </li>
-    <li [ngClass]="{'close': bottomNav}" class="nav-item menu-mobile">
+    </div>
+    <div [ngClass]="{'close': bottomNav}" class="nav-item menu-mobile">
       <a href="#" class="menu-btn"
          (click)="bottomNav = !bottomNav"></a>
-    </li>
-  </ul>
-
-
-  <ul [ngClass]="{'bottom-main-nav-mobile': bottomNav}"
-      class="main-nav bottom-main-nav">
-    <li class="nav-item">
-      <a routerLinkActive="router-link-active"
-         [ngClass]="{'activeMenuItem': activeMenuItemServices}"
-         (click)="goToRoute('services')">Services</a>
-    </li>
-    <li class="nav-item">
-      <a routerLinkActive="router-link-active"
-         [ngClass]="{'activeMenuItem': activeMenuItemAbout}"
-         (click)="goToRoute('about')">Meet the Chef</a>
-    </li>
-    <li class="nav-item">
-      <a routerLinkActive="router-link-active"
-         [ngClass]="{'activeMenuItem': activeMenuItemHow}"
-         (click)="goToRoute('how')">How it Works</a>
-    </li>
-    <li class="nav-item">
-      <a routerLinkActive="router-link-active"
-         [ngClass]="{'activeMenuItem': activeMenuItemContact}"
-         (click)="goToRoute('contact')">Contact</a>
-    </li>
-    <li class="nav-item">
-      <a routerLinkActive="router-link-active"
-         [ngClass]="{'activeMenuItem': activeMenuItemTestimonials}"
-         (click)="goToRoute('testimonials')">Testimonials</a>
-    </li>
-  </ul>
+    </div>
+    <app-logo></app-logo>
+    <ul class="main-nav bottom-main-nav"
+        [ngClass]="{'bottom-main-nav-mobile': bottomNav}">
+      <li class="logo-filler"></li>
+      <li class="nav-item">
+        <a class="nav-tag"
+           routerLinkActive="router-link-active"
+           [ngClass]="{'activeMenuItem': activeMenuItemHome}"
+           (click)="goToRoute('home')">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-tag"
+           routerLinkActive="router-link-active"
+           [ngClass]="{'activeMenuItem': activeMenuItemServices}"
+           (click)="goToRoute('services')">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-tag"
+           routerLinkActive="router-link-active"
+           [ngClass]="{'activeMenuItem': activeMenuItemAbout}"
+           (click)="goToRoute('about')">About</a>
+      </li>
+      <li class="btn-primary"
+          (click)="goToRoute('how')">Get Free Quote
+      </li>
+    </ul>
+  </div>
 </div>

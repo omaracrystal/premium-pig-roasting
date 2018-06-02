@@ -5,13 +5,10 @@
 
 .btn-primary {
   @include button($third-font-color, $primary-btn-bg);
-  @include rem(font-size, $font-btn);
-  max-width: 100%;
-  @include rem(padding, 15px);
-  @include rem(min-width, 200px);
+  @include btn-font-padding($font-base);
 
-  @include breakpoint($bp-480) {
-    @include rem(max-width, 215px);
+  &.btn-lg {
+    @include btn-font-padding($font-xlg);
   }
 }
 
@@ -19,8 +16,10 @@
   width: 100%;
   text-align: center;
   color: $secondary-font-color;
-  text-shadow: $text-shadow;
+  font-weight: $bolder;
   @include rem(margin, 100px auto 30px);
+  text-shadow: $text-shadow;
+  text-transform: uppercase;
 }
 
 .website-section-wrapper {
@@ -45,7 +44,6 @@
   @include breakpoint($bp-768) {
     flex-wrap: wrap;
   }
-
 
   @include breakpoint($bp-1024) {
     @include rem(margin, 50px 0);
@@ -129,12 +127,81 @@
 //header
 //main nav
 app-header {
-  box-shadow: $box-shadow;
-  width: 100%;
-  background-color: $app-header-background;
   position: fixed;
   top: 0;
+  width: 100%;
   z-index: $z-index-1;
+
+  @include breakpoint($bp-768) {
+    box-shadow: $box-shadow;
+    background-color: $white;
+  }
+
+  app-logo {
+    position: relative;
+
+    @include breakpoint($bp-768) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: -50px;
+      @include rem(padding, $logo-padding);
+    }
+
+    .logo {
+      padding: 0;
+
+      @include breakpoint($bp-768) {
+        @include rem(padding, $logo-padding);
+      }
+    }
+  }
+
+  .bottom {
+    position: absolute;
+    background: $black;
+    top: 0;
+    @include rem(padding, 20px);
+    width: 100%;
+
+    @include breakpoint($bp-768) {
+      padding: 0;
+      position: relative;
+      background: none;
+      width: auto;
+    }
+  }
+}
+
+.logo-filler {
+  width: 250px;
+}
+
+app-logo {
+  .logo {
+    background: $black;
+    @include rem(padding, $logo-padding);
+    text-align: left;
+    margin-left: 60px;
+
+    @include breakpoint($bp-768) {
+      margin-left: 25px;
+    }
+
+    .logo-text {
+      color: $white;
+      letter-spacing: 1.8px;
+      @include rem(font-size, 23px);
+      font-weight: 900;
+      white-space: nowrap;
+
+      &:last-child {
+        display: block;
+        @include rem(font-size, 14px);
+        letter-spacing: .5px;
+      }
+    }
+  }
 }
 
 .main-nav {
@@ -150,12 +217,12 @@ app-header {
   text-align: center;
   justify-content: space-around;
 
-  .nav-item {
-    @include rem(font-size, $font-nav);
-  }
-
   @include breakpoint($bp-768) {
     flex-direction: row;
+  }
+
+  .nav-item {
+    @include rem(font-size, $font-nav);
   }
 }
 
@@ -174,43 +241,24 @@ app-header {
     }
   }
 
-  .nav-logo {
-    text-align: left;
-    margin-left: 25px;
-
-    .logo {
-      display: none;
-
-      @include breakpoint($bp-768) {
-        display: block;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 250px;
-      }
-    }
-
-    .logo-mobile {
-      display: block;
-      height: 60px;
-      margin: auto;
-
-      @include breakpoint($bp-768) {
-        display: none;
-      }
-    }
-  }
-
   .nav-call {
     display: none;
     text-align: right;
 
-    .call {
+    @include breakpoint($bp-768) {
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
 
+    .call {
       @include breakpoint($bp-768) {
-        color: $third-font-color;
+        color: $menu-font-color;
+        font-weight: $bolder;
         margin-top: 0;
         @include rem(font-size, 12px);
+        text-transform: uppercase;
       }
     }
 
@@ -223,29 +271,41 @@ app-header {
 
       }
     }
-
-    @include breakpoint($bp-768) {
-      display: block;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
   }
 }
 
 .bottom-main-nav {
-  @include rem(margin-top, 20px);
+  margin-top: 0;
   width: 100%;
 
+  .nav-tag {
+    @include a-tag($menu-font-color);
+    display: block;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus,
+    &:active {
+      font-weight: 900;
+    }
+  }
+
   .nav-item {
+
     @include breakpoint($bp-768) {
       width: 20%; // x5 menu items = 100%
       text-align: center;
     }
   }
 
-  a {
-    @include a-tag($third-font-color);
+  .btn-primary {
+    white-space: nowrap;
+    max-width: 200px;
+    align-self: center;
+
+    @include breakpoint($bp-768) {
+
+    }
   }
 }
 
@@ -254,13 +314,16 @@ app-header {
 
   @include breakpoint($bp-768) {
     display: flex;
+    align-items: flex-end;
   }
 }
 
 // hamburger menu
 .menu-mobile {
   position: absolute;
-  right: 30px;
+  @include rem(left, 30px);
+  @include rem(top, 30px);
+  z-index: 100;
 
   @include breakpoint($bp-768) {
     display: none;
@@ -330,7 +393,7 @@ app-header {
   }
 
   h2 {
-    font-family: $font-family-logo-2;
+    //font-family: $font-family-logo-2;
     @include rem(font-size, 22px);
     margin-top: 40px;
 
@@ -346,15 +409,15 @@ app-header {
     border-radius: 5%;
     background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .4));
 
+    @include breakpoint($bp-768) {
+      padding: 50px;
+      margin-top: 100px;
+    }
+
     .highlight {
       font-family: $font-family-sans-serif;
       text-transform: uppercase;
       letter-spacing: 1px;
-    }
-
-    @include breakpoint($bp-768) {
-      padding: 50px;
-      margin-top: 100px;
     }
   }
 
@@ -396,21 +459,24 @@ app-header {
   }
 
   .service-intro {
+    @include breakpoint($bp-1024) {
+      flex-direction: row;
+    }
 
     @include breakpoint($bp-1024) {
       @include rem(margin-left, 40px);
       width: 70%;
     }
   }
-
-  @include breakpoint($bp-1024) {
-    flex-direction: row;
-  }
 }
 
 // services
 .service-card {
   max-width: $service-card-width + $ribbon-width;
+
+  @include breakpoint($bp-768) {
+    width: $service-card-width + $ribbon-width;
+  }
 
   .card-image {
     min-height: 50%;
@@ -422,10 +488,6 @@ app-header {
     max-width: $service-card-width;
     height: $service-card-height;
   }
-
-  @include breakpoint($bp-768) {
-    width: $service-card-width + $ribbon-width;
-  }
 }
 
 //about aka meet the chef
@@ -433,6 +495,10 @@ app-header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+  @include breakpoint($bp-1024) {
+    flex-direction: row;
+  }
 
   article {
     width: 100%;
@@ -449,10 +515,6 @@ app-header {
       }
     }
   }
-
-  @include breakpoint($bp-1024) {
-    flex-direction: row;
-  }
 }
 
 .about-section {
@@ -463,6 +525,10 @@ app-header {
 
 .about-card {
   max-width: $about-card-width + $ribbon-width;
+
+  @include breakpoint($bp-768) {
+    width: $about-card-width + $ribbon-width;
+  }
 
   .ribbon {
     max-width: 65%;
@@ -484,10 +550,6 @@ app-header {
     @include breakpoint($bp-1024) {
       height: 500px;
     }
-  }
-
-  @include breakpoint($bp-768) {
-    width: $about-card-width + $ribbon-width;
   }
 }
 
@@ -516,6 +578,10 @@ app-header {
   width: 100%;
   justify-content: space-around;
 
+  @include breakpoint($bp-768) {
+    flex-direction: row;
+  }
+
   .how-step-wrapper {
     display: flex;
     flex-direction: column;
@@ -524,6 +590,10 @@ app-header {
     @include rem(font-size, 22px);
     @include rem(margin-bottom, 50px);
     width: 100%;
+
+    @include breakpoint($bp-768) {
+      width: 33%;
+    }
 
     .fa {
       display: flex;
@@ -538,14 +608,6 @@ app-header {
       border: 1px solid #979797;
       @include rem(margin-bottom, 20px);
     }
-
-    @include breakpoint($bp-768) {
-      width: 33%;
-    }
-  }
-
-  @include breakpoint($bp-768) {
-    flex-direction: row;
   }
 }
 

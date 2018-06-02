@@ -12,6 +12,7 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { HowComponent } from './how/how.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LogoComponent } from './logo/logo.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { FooterComponent } from './footer/footer.component';
     TestimonialsComponent,
     HowComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,

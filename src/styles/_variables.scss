@@ -4,7 +4,7 @@
 //________________________________________________//
 
 // - - - - - - - - - color world - - - - - - - - - //
-$black: #333333;
+$black: #1E1E1E;
 $off-white: #FBFBFF;
 $white: #FFFFFF;
 $gray: #dcdcdc;
@@ -18,6 +18,7 @@ $primary-font-color: $black;
 $secondary-font-color: $bright-orange;
 $third-font-color: $white;
 $logo-color: #EA212D;
+$menu-font-color: #A8A5A5;
 //$secondary-font-color: $logo-color;
 
 //colors backgrounds
@@ -58,7 +59,6 @@ $font-p: $font-md;
 //font components
 $font-section-title: 40px;
 $font-card-title: 30px;
-$font-btn: $font-xlg;
 $font-nav: $font-lg;
 
 //font weights
@@ -66,7 +66,7 @@ $font-weight-lighter: 300;
 $font-weight-light: 400;
 $font-weight-normal: 500;
 $bold: 700;
-$bolder: 800;
+$bolder: 900;
 
 //font spacing
 $letter-spacing: 1.5px;
@@ -106,4 +106,5 @@ $border-radius: 5px;
 $transition-hover: all 0.3s ease;
 $box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
 $app-header-background: rgba(0, 0, 0, 0.6);
+$logo-padding: 60px 20px 40px;
 

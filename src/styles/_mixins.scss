@@ -10,10 +10,11 @@ Mixins are functions that can be used within classes to set up most common prope
 
 @mixin a-tag($text) {
   color: $text;
-  @include rem(padding-bottom, 8px);
-  border-bottom: 1px solid transparent;
+  @include rem(padding-bottom, 6px);
+  border-bottom: 3.5px solid transparent;
   cursor: pointer !important;
   text-decoration: none !important;
+  font-weight: $bolder;
   transition: $transition-hover;
 
   &:hover,
@@ -21,8 +22,8 @@ Mixins are functions that can be used within classes to set up most common prope
   &:active,
   &.activeMenuItem {
     color: $secondary-font-color;
-    font-weight: $bold;
-    border-bottom: 2px solid $secondary-font-color;
+    font-weight: $bolder;
+    border-bottom: 3.5px solid $secondary-font-color;
   }
 }
 
@@ -33,8 +34,9 @@ Mixins are functions that can be used within classes to set up most common prope
   border-radius: $border-radius;
   color: $text;
   cursor: pointer;
-  font-weight: $bold;
+  font-weight: $bolder;
   letter-spacing: 1px;
+  line-height: 1;
   text-decoration: none !important;
   text-transform: uppercase;
   transition: $transition-hover;
@@ -42,7 +44,13 @@ Mixins are functions that can be used within classes to set up most common prope
   &:hover,
   &:focus {
     background: darken($secondary-font-color, 10%);
+    //background: $black;
   }
+}
+
+@mixin btn-font-padding($font-size) {
+  @include rem(font-size, $font-size);
+  @include rem(padding, $font-size * 1.1 $font-size * 1.5);
 }
 
 //media queries
