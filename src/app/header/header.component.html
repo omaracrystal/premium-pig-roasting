@@ -1,20 +1,12 @@
 <div class="main-header">
   <div class="main-nav">
-    <div class="call-block">
-      <a href="#home" class="column">
-        <span class="call">Call for a Free Quote</span>
-        <strong class="highlight">603-393-5234</strong>
-      </a>
-      <br>
-    </div>
     <div [ngClass]="{'close': bottomNav}" class="nav-item menu-mobile">
       <a href="#" class="menu-btn"
          (click)="bottomNav = !bottomNav"></a>
     </div>
     <app-logo></app-logo>
-    <ul class="main-nav bottom-main-nav"
+    <ul class="nav-list"
         [ngClass]="{'bottom-main-nav-mobile': bottomNav}">
-      <li class="logo-filler"></li>
       <li class="nav-item">
         <a class="nav-tag"
            routerLinkActive="router-link-active"
@@ -31,10 +23,10 @@
         <a class="nav-tag"
            routerLinkActive="router-link-active"
            [ngClass]="{'activeMenuItem': activeMenuItemAbout}"
-           (click)="goToRoute('about')">About</a>
+           (click)="goToRoute('about')">Meet the Chef</a>
       </li>
       <li class="btn-primary"
-          (click)="goToRoute('how')">Get Free Quote
+          (click)="goToRoute('how')">Book Event
       </li>
     </ul>
   </div>

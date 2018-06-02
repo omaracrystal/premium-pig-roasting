@@ -138,23 +138,7 @@ app-header {
   }
 
   app-logo {
-    position: relative;
-
-    @include breakpoint($bp-768) {
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: -50px;
-      @include rem(padding, $logo-padding);
-    }
-
-    .logo {
-      padding: 0;
-
-      @include breakpoint($bp-768) {
-        @include rem(padding, $logo-padding);
-      }
-    }
+    margin-bottom: -90px;
   }
 
   .bottom {
@@ -173,20 +157,13 @@ app-header {
   }
 }
 
-.logo-filler {
-  width: 250px;
-}
-
 app-logo {
+  position: relative;
+
   .logo {
     background: $black;
     @include rem(padding, $logo-padding);
     text-align: left;
-    margin-left: 60px;
-
-    @include breakpoint($bp-768) {
-      margin-left: 25px;
-    }
 
     .logo-text {
       color: $white;
@@ -206,55 +183,24 @@ app-logo {
 
 .main-nav {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  background: none;
-  list-style: none;
-  padding: 20px 0 7px;
-  max-width: 1100px;
-  margin: auto;
-  width: 100%;
-  text-align: center;
-  justify-content: space-around;
-
-  @include breakpoint($bp-768) {
-    flex-direction: row;
-  }
-
-  .nav-item {
-    @include rem(font-size, $font-nav);
-  }
 }
 
-.top-main-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  max-width: none;
+app-call-block {
+  position: fixed;
+  bottom: -30px;
+  right: 0;
+  padding: 10px;
+  color: #4A4A4A;
+  background: #D8D8D8;
+  border: 1px solid #979797;
 
-  a {
-    &:hover,
-    &:focus {
-      border-bottom: none;
-      text-decoration: none;
-    }
-  }
-
-  .nav-call {
-    display: none;
+  .call-block {
+    display: block;
     text-align: right;
-
-    @include breakpoint($bp-768) {
-      display: block;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
+    z-index: 1001;
 
     .call {
       @include breakpoint($bp-768) {
-        color: $menu-font-color;
         font-weight: $bolder;
         margin-top: 0;
         @include rem(font-size, 12px);
@@ -262,7 +208,7 @@ app-logo {
       }
     }
 
-    .highlight {
+    .phone {
       @include rem(font-size, 16px);
       margin-top: -10px;
 
@@ -274,14 +220,44 @@ app-logo {
   }
 }
 
-.bottom-main-nav {
-  margin-top: 0;
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: none;
+  list-style: none;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  justify-content: space-around;
   width: 100%;
+
+  @include breakpoint($bp-768) {
+    flex-direction: row;
+  }
+
+  .btn-primary {
+    white-space: nowrap;
+    max-width: 200px;
+    align-self: center;
+  }
+
+  .nav-item {
+    @include rem(font-size, $font-nav);
+  }
+
+  li {
+
+    @include breakpoint($bp-768) {
+      text-align: center;
+    }
+  }
 
   .nav-tag {
     @include a-tag($menu-font-color);
     display: block;
     text-transform: uppercase;
+    white-space: nowrap;
 
     &:hover,
     &:focus,
@@ -289,27 +265,9 @@ app-logo {
       font-weight: 900;
     }
   }
-
-  .nav-item {
-
-    @include breakpoint($bp-768) {
-      width: 20%; // x5 menu items = 100%
-      text-align: center;
-    }
-  }
-
-  .btn-primary {
-    white-space: nowrap;
-    max-width: 200px;
-    align-self: center;
-
-    @include breakpoint($bp-768) {
-
-    }
-  }
 }
 
-.bottom-main-nav-mobile {
+.nav-list{
   display: none;
 
   @include breakpoint($bp-768) {

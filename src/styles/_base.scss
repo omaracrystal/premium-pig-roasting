@@ -32,6 +32,9 @@ body {
 
 a {
   text-decoration: none;
+  &:any-link {
+    color: $gray-dark;
+  }
 }
 
 button {

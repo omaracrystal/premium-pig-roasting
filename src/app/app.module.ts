@@ -13,6 +13,7 @@ import { HowComponent } from './how/how.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LogoComponent } from './logo/logo.component';
+import { CallBlockComponent } from './call-block/call-block.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { LogoComponent } from './logo/logo.component';
     HowComponent,
     HeaderComponent,
     FooterComponent,
-    LogoComponent
+    LogoComponent,
+    CallBlockComponent
   ],
   imports: [
     BrowserModule,

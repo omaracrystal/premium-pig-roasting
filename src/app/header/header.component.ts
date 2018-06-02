@@ -26,15 +26,6 @@ export class HeaderComponent implements OnInit {
     if (location.hash === '#about') {
       this.activeMenuItemAbout = true;
     }
-    if (location.hash === '#how') {
-      this.activeMenuItemHow = true;
-    }
-    if (location.hash === '#contact') {
-      this.activeMenuItemContact = true;
-    }
-    if (location.hash === '#testimonials') {
-      this.activeMenuItemTestimonials = true;
-    }
   }
 
   onWindowScroll() {
@@ -55,7 +46,7 @@ export class HeaderComponent implements OnInit {
 
   goToRoute(id) {
     document.getElementById(id).scrollIntoView();
-    location.replace('#'+ id);
+    location.replace('#' + id);
     this.activeMenuItemHome = false;
     this.activeMenuItemServices = false;
     this.activeMenuItemAbout = false;
