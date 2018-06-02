@@ -22,7 +22,8 @@ etc ..
 body {
   background: $site-bg;
   color: $primary-font-color;
-  font-family: $font-family-sans-serif;
+  //font-family: $font-family-sans-serif;
+  font-family: $font-family-Chelsea;
   @include rem(font-size, $font-base);
   font-weight: $font-weight-normal;
   line-height: 1.5;
@@ -38,6 +39,7 @@ a {
 }
 
 button {
+  font-family: $font-family-sans-serif;
 
   &:disabled,
   &[disabled]{

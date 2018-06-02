@@ -13,13 +13,18 @@
 }
 
 .section-title {
+  font-family: $font-family-sans-serif;
   width: 100%;
   text-align: center;
-  color: $secondary-font-color;
+  //color: $secondary-font-color;
+  color: $gray-dark;
+  //color: $third-font-color;
   font-weight: $bolder;
   @include rem(margin, 100px auto 30px);
   text-shadow: $text-shadow;
   text-transform: uppercase;
+  letter-spacing: 5px;
+  @include rem(font-size, 40px);
 }
 
 .website-section-wrapper {
@@ -73,6 +78,7 @@
   }
 
   .card-title {
+    font-family: $font-family-sans-serif;
     @include rem(font-size, $font-card-title);
     font-weight: $font-weight-lighter;
     @include rem(margin-bottom, 15px)
@@ -87,12 +93,16 @@
 
 .no-background {
   .section-title {
-    color: $third-font-color;
+    //color: $third-font-color;
+    color: $black;
+    text-shadow: $text-shadow-outline;
   }
 }
 
 // ribbon
 .ribbon-wrapper {
+  font-family: $font-family-sans-serif;
+  font-weight: $bolder;
   position: absolute;
   margin-top: 85px;
   left: -6px;
@@ -100,8 +110,10 @@
   .ribbon {
     color: $third-font-color;
     box-shadow: $box-shadow;
-    font-weight: $bold;
-    font-style: italic;
+    font-weight: $bolder;
+    text-shadow: $text-shadow;
+    letter-spacing: 0.5px;
+    //font-style: italic;
     @include rem(font-size, $font-md);
     background: $ribbon-bg;
     @include rem(padding, 5px 20px);
@@ -128,6 +140,7 @@
 //header
 //main nav
 app-header {
+  font-family: $font-family-sans-serif;
   background: $app-header-background;
   position: fixed;
   top: 0;
@@ -167,16 +180,18 @@ app-logo {
     text-align: left;
 
     .logo-text {
-      color: $white;
-      letter-spacing: 1.8px;
+      color: $gray;
+      letter-spacing: 2.5px;
       @include rem(font-size, 23px);
       font-weight: 900;
       white-space: nowrap;
 
       &:last-child {
+        font-family: $font-family-Chelsea;
+        font-weight: 500;
+        letter-spacing: 1px;
         display: block;
         @include rem(font-size, 14px);
-        letter-spacing: .5px;
       }
     }
   }
@@ -187,6 +202,7 @@ app-logo {
 }
 
 app-call-block {
+  font-family: $font-family-sans-serif;
   position: fixed;
   bottom: -30px;
   right: 0;
@@ -259,12 +275,6 @@ app-call-block {
     display: block;
     text-transform: uppercase;
     white-space: nowrap;
-
-    &:hover,
-    &:focus,
-    &:active {
-      font-weight: 900;
-    }
   }
 }
 
@@ -339,51 +349,16 @@ app-call-block {
 // home
 .home-section {
   color: $third-font-color;
-  text-align: center;
-  min-height: 500px;
   display: block;
-  text-shadow: $text-shadow;
-
-  h1 {
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    margin-top: 0;
-    @include rem(font-size, 30px);
-  }
-
-  h2 {
-    //font-family: $font-family-logo-2;
-    @include rem(font-size, 22px);
-    margin-top: 40px;
-
-    @include breakpoint($bp-768) {
-      @include rem(font-size, 25px);
-    }
-  }
-
-  .circle {
-    margin-top: 30px;
-    text-align: center;
-    padding: 15px;
-    border-radius: 5%;
-    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .4));
-
-    @include breakpoint($bp-768) {
-      padding: 50px;
-      margin-top: 100px;
-    }
-
-    .highlight {
-      font-family: $font-family-sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-  }
+  min-height: 500px;
+  text-align: center;
 
   .home-title {
     position: relative;
     min-height: 100vh;
     height: 100%;
+    text-transform: uppercase;
+    text-shadow: $text-shadow;
 
     .place {
       font-weight: 500;
@@ -392,7 +367,8 @@ app-call-block {
     }
 
     .sub-title {
-      font-weight: 300;
+      font-family: $font-family-sans-serif;
+      font-weight: 500;
       letter-spacing: 0;
       @include rem(font-size, 40px);
     }
@@ -401,14 +377,6 @@ app-call-block {
       font-weight: $bolder;
       letter-spacing: 5px;
       @include rem(font-size, 50px);
-    }
-  }
-
-  .logo-pig {
-    height: 130px;
-
-    @include breakpoint($bp-768) {
-      height: 200px;
     }
   }
 
@@ -426,6 +394,10 @@ app-call-block {
   display: flex;
   flex-direction: column;
 
+  @include breakpoint($bp-768) {
+    flex-direction: row;
+  }
+
   .service-intro-image {
     width: 100%;
     max-width: 281px;
@@ -436,9 +408,7 @@ app-call-block {
   }
 
   .service-intro {
-    @include breakpoint($bp-1024) {
-      flex-direction: row;
-    }
+    @include rem(font-size, 16px);
 
     @include breakpoint($bp-1024) {
       @include rem(margin-left, 40px);
@@ -494,12 +464,6 @@ app-call-block {
   }
 }
 
-.about-section {
-  .section-title {
-    color: $third-font-color;
-  }
-}
-
 .about-card {
   max-width: $about-card-width + $ribbon-width;
 
@@ -540,6 +504,7 @@ app-call-block {
 
 //how it works
 .how-section {
+  font-family: $font-family-sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-evenly;

@@ -15,7 +15,7 @@ Mixins are functions that can be used within classes to set up most common prope
   border-bottom: 3.5px solid transparent;
   cursor: pointer !important;
   text-decoration: none !important;
-  font-weight: $bolder;
+  font-weight: 800;
   transition: $transition-hover;
 
   &:hover,
@@ -23,7 +23,7 @@ Mixins are functions that can be used within classes to set up most common prope
   &:active,
   &.activeMenuItem {
     color: $white;
-    font-weight: $bolder;
+    font-weight: 800;
     //border-bottom: 3.5px solid $black;
   }
 }

@@ -41,8 +41,10 @@ $input-background: #3D3D3D;
 @import url('https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
 // need more font thickness 'Quicksand'
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Chelsea+Market');
 $font-family-sans-serif: 'Muli', Helvetica, Arial, sans-serif;
 $font-family-logo-2: 'Quicksand';
+$font-family-Chelsea: 'Chelsea Market', cursive;
 
 //fonts sizes
 $font-xsm: 10px;
@@ -110,4 +112,4 @@ $transition-hover: all 0.3s ease;
 $box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
 $app-header-background: rgba(0, 0, 0, 0.6);
 $logo-padding: 60px 20px 40px;
-
+$text-shadow-outline:  -.3px -.3px 0 $black, .3px -.3px 0 $gray-light, -.3px .3px 0 $gray-light, .3px .3px 0 $gray-light;
