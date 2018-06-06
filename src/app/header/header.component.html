@@ -1,32 +1,34 @@
 <div class="main-header">
   <div class="main-nav">
-    <div [ngClass]="{'close': bottomNav}" class="nav-item menu-mobile">
-      <a href="#" class="menu-btn"
-         (click)="bottomNav = !bottomNav"></a>
+    <div class="mobile-container">
+      <div [ngClass]="{'close': !bottomNav}" class="nav-item menu-mobile">
+        <a class="menu-btn"
+           (click)="bottomNav = !bottomNav"></a>
+      </div>
+      <app-logo></app-logo>
     </div>
-    <app-logo></app-logo>
     <ul class="nav-list"
         [ngClass]="{'bottom-main-nav-mobile': bottomNav}">
       <li class="nav-item">
         <a class="nav-tag"
            routerLinkActive="router-link-active"
            [ngClass]="{'activeMenuItem': activeMenuItemHome}"
-           (click)="goToRoute('home')">Home</a>
+           (click)="goToRoute('home'); bottomNav = false">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-tag"
            routerLinkActive="router-link-active"
            [ngClass]="{'activeMenuItem': activeMenuItemServices}"
-           (click)="goToRoute('services')">Services</a>
+           (click)="goToRoute('services'); bottomNav = false">Services</a>
       </li>
       <li class="nav-item">
         <a class="nav-tag"
            routerLinkActive="router-link-active"
            [ngClass]="{'activeMenuItem': activeMenuItemAbout}"
-           (click)="goToRoute('about')">Meet the Chef</a>
+           (click)="goToRoute('about'); bottomNav = false">Meet the Chef</a>
       </li>
       <li class="btn-primary"
-          (click)="goToRoute('how')">Book Event
+          (click)="goToRoute('how'); bottomNav = false">Book Event
       </li>
     </ul>
   </div>

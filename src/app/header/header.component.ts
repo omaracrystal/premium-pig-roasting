@@ -8,7 +8,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 })
 
 export class HeaderComponent implements OnInit {
-  bottomNav: boolean = true;
+  bottomNav: boolean = false;
   isScrolled: boolean = false;
   // active menu items
   activeMenuItemHome: boolean = false;
@@ -30,9 +30,8 @@ export class HeaderComponent implements OnInit {
 
   onWindowScroll() {
     const scrollTopHeight = document.body.scrollTop || 0;
-    console.log('scroll ding dong');
 
-    if(scrollTopHeight > 200) {
+    if (scrollTopHeight > 200) {
       this.isScrolled = true;
     } else {
       this.isScrolled = false;

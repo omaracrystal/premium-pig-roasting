@@ -29,8 +29,11 @@
 
 .website-section-wrapper {
   background: $site-bg;
-  //width: 100%;
-  margin: 40px;
+  @include rem(margin, 10px);
+
+  @include breakpoint($bp-768) {
+    @include rem(margin, 40px);
+  }
 }
 
 .website-section {
@@ -47,7 +50,7 @@
   font-family: $font-family-sans-serif;
   text-align: center;
   @include rem(font-size, 25px);
-  margin-top: 50px;
+  @include rem(margin-top, 50px);
 }
 
 .card-container {
@@ -60,7 +63,7 @@
   }
 
   @include breakpoint($bp-1024) {
-    @include rem(margin, 50px 0);
+    @include rem(margin, 20px 0);
     flex-direction: row;
   }
 }
@@ -82,7 +85,12 @@
   }
 
   .card-text-wrapper {
+    @include rem(font-size, 13px);
     @include rem(padding, 10px);
+
+    @include breakpoint($bp-480) {
+      @include rem(font-size, 14px);
+    }
   }
 
   .card-title {
@@ -157,10 +165,7 @@ app-header {
 
   @include breakpoint($bp-768) {
     box-shadow: $box-shadow;
-  }
-
-  app-logo {
-    margin-bottom: -90px;
+    background: $app-header-background-gradient;
   }
 
   .bottom {
@@ -184,22 +189,31 @@ app-logo {
 
   .logo {
     background: $black;
-    @include rem(padding, $logo-padding);
     text-align: left;
 
     .logo-text {
       color: $gray;
-      letter-spacing: 2.5px;
-      @include rem(font-size, 23px);
+      letter-spacing: 1.95px;
+      @include rem(font-size, 18px);
       font-weight: 900;
       white-space: nowrap;
+
+      @include breakpoint($bp-480) {
+        letter-spacing: 2.5px;
+        @include rem(font-size, 23px);
+      }
 
       &:last-child {
         font-family: $font-family-Chelsea;
         font-weight: 500;
-        letter-spacing: 1px;
+        letter-spacing: .82px;
         display: block;
-        @include rem(font-size, 14px);
+        @include rem(font-size, 11px);
+
+        @include breakpoint($bp-480) {
+          letter-spacing: 1px;
+          @include rem(font-size, 14px);
+        }
       }
     }
   }
@@ -207,6 +221,41 @@ app-logo {
 
 .main-nav {
   display: flex;
+  flex-direction: column;
+
+  @include breakpoint($bp-768) {
+    flex-direction: row;
+  }
+
+  .bottom-main-nav-mobile {
+    display: block;
+    height: 100vh;
+  }
+
+  .mobile-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    app-logo {
+      margin-bottom: 0;
+
+      .logo {
+        background: none;
+        @include rem(padding, 15px);
+
+        @include breakpoint($bp-768) {
+          background: $black;
+          box-shadow: $box-shadow;
+          @include rem(padding, $logo-padding);
+        }
+      }
+
+      @include breakpoint($bp-768) {
+        margin-bottom: -90px;
+      }
+    }
+  }
 }
 
 app-call-block {
@@ -265,6 +314,11 @@ app-call-block {
     white-space: nowrap;
     max-width: 200px;
     align-self: center;
+    margin: 20px auto;
+
+    @include breakpoint($bp-768) {
+      margin: 0;
+    }
   }
 
   .nav-item {
@@ -297,7 +351,7 @@ app-call-block {
 
 // hamburger menu
 .menu-mobile {
-  position: absolute;
+  position: relative;
   @include rem(left, 30px);
   @include rem(top, 30px);
   z-index: 100;
@@ -370,31 +424,46 @@ app-call-block {
 
     .place {
       font-weight: 500;
-      letter-spacing: -1px;
-      @include rem(font-size, 30px);
+      letter-spacing: 3px;
+      @include rem(font-size, 20px);
+
+      @include breakpoint($bp-768) {
+        @include rem(font-size, 30px);
+      }
     }
 
     .sub-title {
       font-family: $font-family-sans-serif;
       font-weight: 500;
-      letter-spacing: 0;
-      @include rem(font-size, 40px);
+      letter-spacing: 2px;
+      @include rem(margin-top, 50px);
+      @include rem(font-size, 25px);
+
+      @include breakpoint($bp-768) {
+        margin: 0.67em 0; // default
+        @include rem(font-size, 40px);
+      }
     }
 
     .title {
       font-weight: $bolder;
       letter-spacing: 5px;
-      @include rem(font-size, 50px);
+      @include rem(font-size, 40px);
+
+      @include breakpoint($bp-768) {
+        @include rem(font-size, 50px);
+      }
     }
   }
 
-  .cover-background-image {
-    min-height: 100vh;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url($home-bg-image);
-    position: fixed;
-    width: 100%;
-  }
+  // video being used for now keep just in case
+  //.cover-background-image {
+  //  min-height: 100vh;
+  //  height: 100%;
+  //  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url($home-bg-image);
+  //  position: fixed;
+  //  width: 100%;
+  //}
 }
 
 //services
@@ -580,6 +649,13 @@ footer {
 // video
 .video-bg {
   position: fixed;
+  min-height: 100vh;
+  min-width: 100vw;
   top: 0;
+  right: 0;
   z-index: -1;
+
+  @include breakpoint($bp-768) {
+    @include rem(right, -110px);
+  }
 }
