@@ -658,4 +658,8 @@ footer {
   @include breakpoint($bp-768) {
     @include rem(right, -110px);
   }
+
+  @include breakpoint(1600px) {
+    right: auto;
+  }
 }
