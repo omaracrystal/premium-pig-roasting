@@ -6,9 +6,7 @@ const INTRODUCTION = ' We use <span class="highlight">USDA pigs</span> obtained 
   '        <br><br>\n' +
   '        We tailor your pig roasting service around your event’s needs and specification giving you and your guests the\n' +
   '        best pig roasting catering experience. Whether you are having a wedding reception, birthday party, business\n' +
-  '        gathering or any large celebration, a pig roast is easy and fun for any occasion!\n' +
-  '        <br><br>\n' +
-  '        <strong>Simply choose one of the following three options:</strong>';
+  '        gathering or any large celebration, a pig roast is easy and fun for any occasion!\n';
 
 const INTRO_IMG = '/../../assets/images/stuffing.png';
 

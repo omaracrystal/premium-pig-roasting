@@ -42,6 +42,14 @@
   @include rem(padding, 15px);
 }
 
+.card-container-header {
+  color: $bright-orange;
+  font-family: $font-family-sans-serif;
+  text-align: center;
+  @include rem(font-size, 25px);
+  margin-top: 50px;
+}
+
 .card-container {
   display: flex;
   flex-direction: column;
@@ -81,7 +89,8 @@
     font-family: $font-family-sans-serif;
     @include rem(font-size, $font-card-title);
     font-weight: $font-weight-lighter;
-    @include rem(margin-bottom, 15px)
+    @include rem(margin-bottom, 15px);
+    text-shadow: $text-shadow;
   }
 
   .card-hr {
@@ -93,8 +102,7 @@
 
 .no-background {
   .section-title {
-    //color: $third-font-color;
-    color: $black;
+    color: $bright-orange;
     text-shadow: $text-shadow-outline;
   }
 }
@@ -567,4 +575,11 @@ footer {
     max-width: 1100px;
     margin: auto;
   }
+}
+
+// video
+.video-bg {
+  position: fixed;
+  top: 0;
+  z-index: -1;
 }
